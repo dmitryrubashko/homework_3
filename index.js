@@ -1,84 +1,55 @@
 // task_1
+// const users = [
+//     {
+//         id: 1,
+//         first_name: 'Jeanette',
+//         last_name: 'Penddreth',
+//         email: 'jpenddreth0@census.gov',
+//         gender: 'Female',
+//         ip_address: '26.58.193.2',
+//     },
 
-const users = [
-    {
-        id: 1,
-        first_name: 'Jeanette',
-        last_name: 'Penddreth',
-        email: 'jpenddreth0@census.gov',
-        gender: 'Female',
-        ip_address: '26.58.193.2',
-    },
+//     {
+//         id: 2,
+//         first_name: 'Petr',
+//         last_name: 'Jackson',
+//         email: 'gfrediani1@senate.gov',
+//         gender: 'Male',
+//         ip_address: '229.179.4.212',
+//     },
 
-    {
-        id: 2,
-        first_name: 'Petr',
-        last_name: 'Jackson',
-        email: 'gfrediani1@senate.gov',
-        gender: 'Male',
-        ip_address: '229.179.4.212',
-    },
+//     {
+//         id: 3,
+//         first_name: 'Alex',
+//         last_name: 'Pushkin',
+//         email: 'fffff@senate.gov',
+//         gender: 'Male',
+//         ip_address: '129.779.24.812',
+//     },
 
-    {
-        id: 3,
-        first_name: 'Alex',
-        last_name: 'Pushkin',
-        email: 'fffff@senate.gov',
-        gender: 'Male',
-        ip_address: '129.779.24.812',
-    },
+//     {
+//         id: 4,
+//         first_name: 'Masha',
+//         last_name: 'Romanova',
+//         email: 'masharom@senate.gov',
+//         gender: 'Female',
+//         ip_address: '119.119.1.112',
+//     },
 
-    {
-        id: 4,
-        first_name: 'Masha',
-        last_name: 'Romanova',
-        email: 'masharom@senate.gov',
-        gender: 'Female',
-        ip_address: '119.119.1.112',
-    },
+//     {
+//         id: 5,
+//         first_name: 'Dima',
+//         last_name: 'Surname',
+//         email: 'dimdmdmdm@senate.gov',
+//         gender: 'Male',
+//         ip_address: '429.19.46.292',
+//     }
+// ];
 
-    {
-        id: 5,
-        first_name: 'Dima',
-        last_name: 'Surname',
-        email: 'dimdmdmdm@senate.gov',
-        gender: 'Male',
-        ip_address: '429.19.46.292',
-    }
-];
-
-
-// const getSortUsers = (usersArray) => {
-//     let womenUsers = [];
-//     let menUsers = [];
-//     return usersArray = ((user, index) => {  
-//         if (usersArray[index].gender === 'Female') {
-//             first.push(usersArray[user])
-//         };
-//         if (usersArray[index].gender === 'Male') {
-//             second.push(usersArray[user])
-//         };
-//         const sortedArray = {
-//             women: womenUsers,
-//             men: menUsers
-            
-//         }
-//         console.log(sortedArray[0]) 
-//       })
-      
-// }
-
-// const getSortUsers = (usersArray) => {
-//     return usersArray.map((user, index) => ({
-//         women:
-//         men: 
-//     }))
-// }
+// const getSortUsers = (usersArray) =>
 
 
-// console.log(getSortUsers(users))
-    
-// console.log(users[4].gender)
+  
 
 
 // task 4 
@@ -106,7 +77,6 @@ console.log (isPalindrome('ШАлАш'));
 console.log (isPalindrome('привет'));
 
 // task 7
-
 const newReleases = [
     {
     id: 70111470,
@@ -157,8 +127,40 @@ const releaseId = (releases) => {
   
 console.log(releaseId(newReleases));
 
-// task_9 
+// task_8
+const videos = [
+    {
+    id: 4,
+    title: "The Chamber"
+    },
 
+    {
+    id: 3,
+    title: "Fracture"
+    },
+
+    {
+    id: 2,
+    title: "Die Hard"
+    },
+    
+    {
+    id: 1,
+    title: "Bad Boys"
+    }
+];
+
+const correctedArray = (videosArray) => {
+    return videosArray.reduce((result, movie, index) => {
+        result[movie.id] = movie.title;
+        return result;
+    }, {})
+}
+
+console.log (correctedArray(videos))
+   
+
+// task_9 
 const boxarts = [
     {
       width: 200,
@@ -183,7 +185,7 @@ const boxarts = [
       height: 150,
       url: "http://cdn-0.nflximg.com/images/2891/Fracture425.jpg"
     }
-  ];
+];
 
 const showUrl = (arts) => {
     const squares = arts.map((picture, index) => arts[index].width * arts[index].height);
@@ -191,6 +193,53 @@ const showUrl = (arts) => {
     return arts[squares.indexOf(indexOfUrl)].url;
 };
 
-console.log(showUrl(boxarts))
+console.log(showUrl(boxarts));
 
-  
+
+// task_2
+const initialData = [
+    {
+      username: 'Maria',
+      age: 25,
+    },
+
+    {
+      username: 'alex',
+      age: 21,
+    },
+
+    {
+      username: 'oleg',
+      age: 14,
+    },
+
+    {
+      username: 'dmitriy',
+      age: 35,
+    },
+
+    {
+      username: 'Oksana',
+      age: 72,
+    },
+
+    {
+        username: 'Yan',
+        age: 100,
+      },
+];
+
+const sortedAdultArray = (peopleArray) => {
+    return peopleArray.sort((previous, next) => {
+        if (previous.username.toLowerCase() > next.username.toLowerCase()) {
+          return 1;
+        }
+        if (previous.username.toLowerCase() < next.username.toLowerCase()) {
+          return -1;
+        }
+        return 0;
+    });
+    
+}
+
+console.log(sortedAdultArray(initialData))
