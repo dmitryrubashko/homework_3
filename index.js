@@ -1,4 +1,5 @@
 // task_1
+
 const users = [
     {
         id: 1,
@@ -73,6 +74,7 @@ const getSortedArray = (usersArray) => {
 console.log (getSortedArray(users));
 
 // task_2
+
 const initialData = [
     {
       username: 'Maria',
@@ -110,7 +112,6 @@ const sortedAdultArray = (peopleArray) => {
         if (previous.username.toLowerCase() > next.username.toLowerCase()) return 1;
         if (previous.username.toLowerCase() < next.username.toLowerCase()) return -1; 
     });
-
     return sortedNames.reduce((result, user, index) => {
         if (peopleArray[index].age >= 21) result.push(user);
         return result;
@@ -157,12 +158,13 @@ const getUsersList = (users, ids) => {
     };
     return shortUserList;
 }
-const idArray_1 = [1, 2, 3, 4];
-const idArray_2 = [3];
+const idArray_1 = [1, 2, 3, 4, 8, 999];
+const idArray_2 = [3, 4];
 console.log(getUsersList(usersList, idArray_1));
 console.log(getUsersList(usersList, idArray_2));
 
 // task 4 
+
 const initialArray = [1, 'Hello', 3, 'Bye', 'WORLD'];
 const sortedArray = (unsortedArray) => {
     return unsortedArray.map((item, index) =>({
@@ -174,7 +176,8 @@ const sortedArray = (unsortedArray) => {
 
 console.log (sortedArray(initialArray))
 
-// task_5 
+// task_5
+
 const isPalindrome = (word) => {
     for (let i = 0; i <= Math.floor(word.length/2); i++) {
         if (word[i].toLowerCase() !== word[word.length-i-1].toLowerCase()) {
@@ -238,9 +241,10 @@ const getImportantInfo = (releases) => {
     return result;
 }
 
-console.log(getImportantInfo(newMovies))   
+console.log(getImportantInfo(newMovies));  
 
 // task_7
+
 const newReleases = [
     {
     id: 70111470,
@@ -292,6 +296,7 @@ const releaseId = (releases) => {
 console.log(releaseId(newReleases));
 
 // task_8
+
 const videos = [
     {
     id: 4,
@@ -325,6 +330,7 @@ console.log (correctedArray(videos))
    
 
 // task_9 
+
 const boxarts = [
     {
       width: 200,
